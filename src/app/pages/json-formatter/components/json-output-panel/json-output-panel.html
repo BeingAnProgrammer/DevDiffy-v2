@@ -1,0 +1,22 @@
+<div class="panel-label" id="json-output-label">output.json</div>
+<div class="output-body" aria-labelledby="json-output-label">
+  @if (showManualPrompt()) {
+    <div class="output-body__overlay">
+      <button type="button" appButton="primary" (click)="manualFormat.emit()">Format JSON →</button>
+    </div>
+  } @else if (showInvalidBadge()) {
+    <div class="output-body__error" role="alert">Syntax error: {{ jsonError() }}</div>
+  } @else {
+    @switch (mode()) {
+      @case ('pretty') {
+        <app-json-tree-view [rows]="treeRows()" (togglePath)="togglePath.emit($event)" />
+      }
+      @case ('minify') {
+        <app-json-flat-view [rows]="flatRows()" />
+      }
+      @case ('tree') {
+        <app-json-worktree-view [rows]="worktreeRows()" />
+      }
+    }
+  }
+</div>

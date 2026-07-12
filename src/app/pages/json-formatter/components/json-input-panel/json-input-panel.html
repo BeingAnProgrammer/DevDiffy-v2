@@ -1,0 +1,9 @@
+<div class="panel-label" id="json-input-label">input.json</div>
+<textarea
+  class="panel-textarea"
+  aria-labelledby="json-input-label"
+  spellcheck="false"
+  [value]="value()"
+  (input)="onInput($event)"
+  (blur)="blurred.emit()"
+></textarea>

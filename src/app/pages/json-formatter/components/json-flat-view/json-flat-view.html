@@ -1,0 +1,10 @@
+@for (row of rows(); track row.num) {
+  <div class="flat-row">
+    <span class="flat-row__num">{{ row.num }}</span>
+    <span class="flat-row__code">
+      @for (tok of row.tokens; track $index) {
+        <span [style.color]="tok.color">{{ tok.text }}</span>
+      }
+    </span>
+  </div>
+}

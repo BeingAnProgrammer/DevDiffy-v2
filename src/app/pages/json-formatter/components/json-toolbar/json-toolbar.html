@@ -1,0 +1,52 @@
+<div class="toolbar">
+  <app-segmented-control [options]="modeOptions" [value]="outputMode()" (valueChange)="onModeChange($event)" ariaLabel="Output mode" />
+
+  <button type="button" appButton="toggle" size="xs" [active]="autoFormat()" (click)="toggleAuto.emit()" class="auto-toggle" [attr.aria-pressed]="autoFormat()">
+    <span class="auto-toggle__dot" aria-hidden="true"></span>Auto
+  </button>
+
+  @if (isTreeMode()) {
+    <div class="expand-group" role="group" aria-label="Tree expansion">
+      <button type="button" class="expand-btn" (click)="expandAll.emit()">Expand All</button>
+      <button type="button" class="expand-btn" (click)="collapseAll.emit()">Collapse All</button>
+    </div>
+  }
+
+  <div class="toolbar__spacer"></div>
+
+  @if (showValidBadge()) {
+    <span class="status status--valid" role="status">
+      <app-icon name="check" [size]="12" color="var(--success)" [strokeWidth]="3" />
+      Valid JSON
+    </span>
+  }
+  @if (showInvalidBadge()) {
+    <span class="status status--invalid" role="alert">✗ {{ jsonError() }}</span>
+  }
+
+  <label
+    for="json-upload-input"
+    appButton="ghost"
+    size="sm"
+    tabindex="0"
+    (keydown.enter)="uploadInput.click()"
+    (keydown.space)="uploadInput.click(); $event.preventDefault()"
+  >Upload</label>
+  <input #uploadInput id="json-upload-input" type="file" accept="application/json,.json,.txt" (change)="onFileSelected($event)" class="visually-hidden" />
+
+  <app-json-history-dropdown [items]="historyItems()" [open]="historyOpen()" (toggleOpen)="toggleHistory.emit()" (select)="selectHistory.emit($event)" />
+
+  <button type="button" appButton="ghost" size="sm" (click)="copy.emit()">
+    @if (jsonCopied()) {
+      Copied!
+    } @else {
+      Copy
+    }
+  </button>
+  <button type="button" appButton="ghost" size="sm" (click)="download.emit()">Download</button>
+  <button type="button" appButton="ghost-danger" size="sm" (click)="clear.emit()">Clear</button>
+  <button type="button" appButton="ghost" size="sm" (click)="openFullscreen.emit()">
+    <app-icon name="fullscreen" [size]="12" />
+    Fullscreen
+  </button>
+</div>

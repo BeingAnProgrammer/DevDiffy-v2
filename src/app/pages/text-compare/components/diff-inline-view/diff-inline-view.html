@@ -1,0 +1,9 @@
+<div class="inline-stream">
+  @for (row of rows(); track row.key) {
+    <div class="inline-row" [style.background]="row.bg">
+      <span class="inline-row__sign">{{ row.sign }}</span>
+      <span class="inline-row__num">{{ row.num }}</span>
+      <span [style.color]="row.color">{{ row.text }}</span>
+    </div>
+  }
+</div>

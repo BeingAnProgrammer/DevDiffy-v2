@@ -1,0 +1,29 @@
+<div class="toolbar">
+  <app-segmented-control [options]="viewOptions" [value]="view()" (valueChange)="onViewChange($event)" ariaLabel="Diff layout" />
+
+  <button
+    type="button"
+    class="ws-toggle"
+    [class.ws-toggle--active]="ignoreWs()"
+    [attr.aria-pressed]="ignoreWs()"
+    (click)="toggleIgnoreWs.emit()"
+  >
+    Ignore whitespace
+  </button>
+
+  <button type="button" appButton="ghost" size="sm" (click)="swap.emit()">Swap</button>
+
+  <div class="toolbar__spacer"></div>
+
+  <span class="count count--added">+{{ addedCount() }}</span>
+  <span class="count count--removed">−{{ removedCount() }}</span>
+
+  <button type="button" appButton="ghost" size="sm" (click)="copy.emit()">
+    @if (diffCopied()) {
+      Copied!
+    } @else {
+      Copy output
+    }
+  </button>
+  <button type="button" appButton="ghost-danger" size="sm" (click)="clear.emit()">Clear</button>
+</div>

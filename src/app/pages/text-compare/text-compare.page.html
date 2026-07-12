@@ -1,0 +1,30 @@
+<section class="tool-page">
+  <a routerLink="/" class="back-link">← Back to home</a>
+
+  <app-section-eyebrow>Text Compare</app-section-eyebrow>
+  <h1 class="tool-page__title">See exactly what changed.</h1>
+  <p class="tool-page__subtitle">Side-by-side or inline — added, removed, and modified lines, highlighted.</p>
+
+  <app-compare-editor-pair [textA]="textA()" [textB]="textB()" (textAChange)="onTextAChange($event)" (textBChange)="onTextBChange($event)" />
+
+  <app-compare-toolbar
+    [view]="compareView()"
+    [ignoreWs]="ignoreWs()"
+    [addedCount]="addedCount()"
+    [removedCount]="removedCount()"
+    [diffCopied]="diffCopied()"
+    (viewChange)="onViewChange($event)"
+    (toggleIgnoreWs)="onToggleIgnoreWs()"
+    (swap)="onSwap()"
+    (copy)="onCopyDiff()"
+    (clear)="onClear()"
+  />
+
+  <div class="diff-output">
+    @if (compareView() === 'side') {
+      <app-diff-side-view [rows]="sideRows()" />
+    } @else {
+      <app-diff-inline-view [rows]="inlineRows()" />
+    }
+  </div>
+</section>

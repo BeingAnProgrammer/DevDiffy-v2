@@ -1,0 +1,71 @@
+<section class="docs-page">
+  <a routerLink="/" class="back-link">← Back to home</a>
+
+  <app-section-eyebrow>Documentation</app-section-eyebrow>
+  <h1 class="docs-page__title">Everything you need to know.</h1>
+
+  <nav class="docs-toc" aria-label="Documentation sections">
+    <a href="#doc-json">01 · JSON Formatter</a>
+    <a href="#doc-compare">02 · Text Compare</a>
+    <a href="#doc-privacy">03 · Privacy &amp; how it runs</a>
+    <a href="#doc-shortcuts">04 · Keyboard shortcuts</a>
+  </nav>
+
+  <div id="doc-json" class="doc-section">
+    <h2 class="doc-section__title">JSON Formatter</h2>
+    <p class="doc-section__text">
+      Paste any JSON into the input pane. With <strong>Auto</strong> enabled it validates and formats as you type; turn Auto off
+      and a <strong>Format JSON →</strong> button appears so nothing runs until you click it.
+    </p>
+    <p class="doc-section__text">
+      Three output views: <strong>Format</strong> (pretty-printed, 4-space indent, collapsible tree — click the ▶/▼ arrows or use
+      <strong>Expand All</strong> / <strong>Collapse All</strong>), <strong>Minify</strong> (single line, no whitespace), and
+      <strong>Tree</strong> (an ASCII directory-style view of the key structure).
+    </p>
+    <p class="doc-section__text">
+      Invalid JSON shows the exact parser error instead of silently failing. Use <strong>Upload</strong> to load a
+      <code>.json</code> file from disk, <strong>Copy</strong> to grab the formatted result, <strong>Download</strong> to save
+      it back out, or <strong>Fullscreen</strong> to view the output full-page (with its own Copy/Download and a Minimize
+      button, or press Esc).
+    </p>
+    <p class="doc-section__text doc-section__text--last">
+      <strong>History</strong> keeps your last 5 valid entries, saved to this browser's local storage whenever you click away
+      from the input, format manually, or upload a file. Open the History dropdown and click any entry to reload it.
+    </p>
+    <a routerLink="/json-formatter" class="doc-section__link">Open JSON Formatter →</a>
+  </div>
+
+  <div id="doc-compare" class="doc-section">
+    <h2 class="doc-section__title">Text Compare</h2>
+    <p class="doc-section__text">
+      Paste two versions of a file into <strong>Original</strong> and <strong>Modified</strong>. The diff is computed
+      line-by-line and rendered as <strong>Side by side</strong> (two columns) or <strong>Inline</strong> (one unified stream
+      with +/− markers).
+    </p>
+    <p class="doc-section__text doc-section__text--last">
+      Turn on <strong>Ignore whitespace</strong> to treat lines that differ only in spacing as identical. <strong>Swap</strong>
+      flips the two panes, and the +added / −removed counters update live above the output.
+    </p>
+    <a routerLink="/text-compare" class="doc-section__link">Open Text Compare →</a>
+  </div>
+
+  <div id="doc-privacy" class="doc-section">
+    <h2 class="doc-section__title">Privacy &amp; how it runs</h2>
+    <p class="doc-section__text doc-section__text--last">
+      Every tool runs entirely in your browser. Nothing you paste, upload, or format is sent to a server — there's no backend
+      involved, no account, and no tracking of file contents. Closing the tab clears everything.
+    </p>
+  </div>
+
+  <div id="doc-shortcuts" class="doc-section doc-section--last">
+    <h2 class="doc-section__title">Keyboard shortcuts</h2>
+    <div class="shortcut-list">
+      @for (shortcut of shortcuts; track shortcut.label) {
+        <div class="shortcut-row">
+          <span class="shortcut-row__label">{{ shortcut.label }}</span>
+          <kbd class="shortcut-row__keys">{{ shortcut.keys }}</kbd>
+        </div>
+      }
+    </div>
+  </div>
+</section>

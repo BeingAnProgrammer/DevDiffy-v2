@@ -1,0 +1,48 @@
+<app-fullscreen-overlay [open]="open()" (closed)="closed.emit()">
+  <div class="fs-header">
+    <div class="fs-header__title">
+      <span class="fs-header__dot" aria-hidden="true"></span>
+      output.json
+    </div>
+    <div class="fs-header__actions">
+      @if (mode() === 'pretty') {
+        <button type="button" appButton="ghost" size="sm" (click)="expandAll.emit()">Expand All</button>
+        <button type="button" appButton="ghost" size="sm" (click)="collapseAll.emit()">Collapse All</button>
+      }
+      <button type="button" appButton="ghost" size="sm" (click)="copy.emit()">
+        @if (jsonCopied()) {
+          Copied!
+        } @else {
+          Copy
+        }
+      </button>
+      <button type="button" appButton="ghost" size="sm" (click)="download.emit()">Download</button>
+      <button type="button" appButton="ghost" size="sm" (click)="closed.emit()">
+        <app-icon name="minimize" [size]="12" [strokeWidth]="2.2" />
+        Minimize (Esc)
+      </button>
+    </div>
+  </div>
+
+  <div class="fs-body">
+    @if (showManualPrompt()) {
+      <div class="fs-body__overlay">
+        <button type="button" appButton="primary" (click)="manualFormat.emit()">Format JSON →</button>
+      </div>
+    } @else if (showInvalidBadge()) {
+      <div class="fs-body__error" role="alert">Syntax error: {{ jsonError() }}</div>
+    } @else {
+      @switch (mode()) {
+        @case ('pretty') {
+          <app-json-tree-view [rows]="treeRows()" (togglePath)="togglePath.emit($event)" />
+        }
+        @case ('minify') {
+          <app-json-flat-view [rows]="flatRows()" />
+        }
+        @case ('tree') {
+          <app-json-worktree-view [rows]="worktreeRows()" />
+        }
+      }
+    }
+  </div>
+</app-fullscreen-overlay>

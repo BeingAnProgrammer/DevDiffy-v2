@@ -1,0 +1,54 @@
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="hero__copy">
+    <app-badge variant="live">Free forever · No signup required</app-badge>
+
+    <h1 id="hero-heading" class="hero__title">Developer tools that save hours, not seconds.</h1>
+    <p class="hero__subtitle">
+      Format JSON, compare text, inspect differences, and work faster with a beautiful developer experience.
+    </p>
+
+    <div class="hero__actions">
+      <a routerLink="/json-formatter" appButton="primary">Try JSON Formatter →</a>
+      <a routerLink="/text-compare" appButton="ghost">Compare Text →</a>
+    </div>
+
+    <div class="hero__tags">
+      @for (tag of heroTags; track tag) {
+        <app-badge variant="tag">{{ tag }}</app-badge>
+      }
+    </div>
+  </div>
+
+  <div class="hero__mock" aria-hidden="true">
+    <div class="hero__mock-titlebar">
+      <span class="dot dot--red"></span>
+      <span class="dot dot--yellow"></span>
+      <span class="dot dot--green"></span>
+      <span class="hero__mock-title">devdiffy.app — json formatter</span>
+    </div>
+    <div class="hero__mock-body">
+      <div class="hero__mock-pane hero__mock-pane--raw">
+        <div class="hero__mock-label">Raw</div>
+        @for (line of heroRawLines; track $index) {
+          <div class="hero__mock-raw-line">{{ line }}</div>
+        }
+      </div>
+      <div class="hero__mock-arrow">
+        <app-icon name="arrow-right" [size]="18" color="var(--accent)" [strokeWidth]="2.5" />
+      </div>
+      <div class="hero__mock-pane">
+        <div class="hero__mock-label">Formatted</div>
+        @for (row of heroFormattedRows; track row.num) {
+          <div class="hero__mock-code-line">
+            <span class="hero__mock-code-num">{{ row.num }}</span>
+            <span>
+              @for (tok of row.tokens; track $index) {
+                <span [style.color]="tok.color">{{ tok.text }}</span>
+              }
+            </span>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

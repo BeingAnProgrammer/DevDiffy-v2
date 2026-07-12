@@ -1,0 +1,25 @@
+<section id="tools" class="tools" aria-labelledby="tools-heading">
+  <app-section-eyebrow>Tools</app-section-eyebrow>
+  <h2 id="tools-heading" class="tools__title">One toolbox, growing.</h2>
+
+  <div class="tools__grid">
+    <a routerLink="/json-formatter" class="tool-card tool-card--live">
+      <div class="tool-card__name">JSON Formatter</div>
+      <div class="tool-card__description">Pretty print · validate</div>
+    </a>
+    <a routerLink="/text-compare" class="tool-card tool-card--live">
+      <div class="tool-card__name">Text Compare</div>
+      <div class="tool-card__description">Side-by-side diff</div>
+    </a>
+
+    @for (tool of comingSoonTools; track tool.name) {
+      <app-card variant="muted">
+        <div class="tool-card__header">
+          <div class="tool-card__name">{{ tool.name }}</div>
+          <app-badge variant="soon">SOON</app-badge>
+        </div>
+        <div class="tool-card__description">{{ tool.description }}</div>
+      </app-card>
+    }
+  </div>
+</section>

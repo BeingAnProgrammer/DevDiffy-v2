@@ -1,0 +1,17 @@
+.editor-pair {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 0;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  overflow: hidden;
+  border: 1px solid var(--border-strong);
+  border-bottom: none;
+}
+
+.editor-pair__col--left {
+  border-right: 1px solid var(--border);
+}
+
+.panel-textarea {
+  min-height: 220px;
+}

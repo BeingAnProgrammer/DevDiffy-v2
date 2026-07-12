@@ -1,0 +1,17 @@
+<button type="button" appButton="ghost" size="sm" (click)="toggleOpen.emit()" aria-haspopup="true" [attr.aria-expanded]="open()">
+  <app-icon name="history" [size]="12" />
+  History
+</button>
+
+<app-dropdown-panel [open]="open()" [width]="280">
+  @if (items().length) {
+    @for (item of items(); track item.key) {
+      <button type="button" class="history-item" (click)="select.emit(item.raw)">
+        <div class="history-item__preview">{{ item.preview }}</div>
+        <div class="history-item__time">{{ item.time }}</div>
+      </button>
+    }
+  } @else {
+    <div class="history-empty">No saved entries yet — format some JSON and click away from the box.</div>
+  }
+</app-dropdown-panel>

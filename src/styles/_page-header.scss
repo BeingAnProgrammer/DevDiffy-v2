@@ -1,0 +1,37 @@
+/* Shared "tool page" header chrome — used by JSON Formatter, Text Compare, and Docs pages. */
+
+.tool-page {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 70px 40px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-mute);
+  margin-bottom: 28px;
+  cursor: pointer;
+}
+
+.back-link:hover {
+  color: var(--accent);
+}
+
+.tool-page__title {
+  font-size: clamp(30px, 4vw, 46px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0 0 12px;
+  text-wrap: balance;
+}
+
+.tool-page__subtitle {
+  color: var(--text-dim);
+  font-size: 16px;
+  max-width: 600px;
+  margin: 0 0 40px;
+}

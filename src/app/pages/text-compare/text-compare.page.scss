@@ -1,0 +1,11 @@
+.diff-output {
+  border: 1px solid var(--border-strong);
+  border-top: none;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  background: var(--bg-2);
+  overflow: auto;
+  max-height: 520px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.6;
+}

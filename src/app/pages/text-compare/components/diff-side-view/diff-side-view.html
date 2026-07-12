@@ -1,0 +1,12 @@
+<div class="side-grid">
+  @for (row of rows(); track row.key) {
+    <div class="side-cell side-cell--left" [style.background]="row.leftBg">
+      <span class="side-cell__num">{{ row.leftNum }}</span>
+      <span [style.color]="row.leftColor">{{ row.leftText }}</span>
+    </div>
+    <div class="side-cell" [style.background]="row.rightBg">
+      <span class="side-cell__num">{{ row.rightNum }}</span>
+      <span [style.color]="row.rightColor">{{ row.rightText }}</span>
+    </div>
+  }
+</div>

@@ -1,0 +1,4 @@
+<div class="check-item" [class.check-item--chip]="variant() === 'chip'">
+  <app-icon name="check" [size]="variant() === 'chip' ? 15 : 13" color="var(--success)" [strokeWidth]="3" />
+  <span><ng-content /></span>
+</div>

@@ -1,0 +1,42 @@
+<section id="features" class="features" aria-labelledby="features-heading">
+  <app-section-eyebrow>Features</app-section-eyebrow>
+  <h2 id="features-heading" class="features__title">Built for the way developers actually work.</h2>
+
+  <div class="features__grid">
+    <app-card variant="hover">
+      <div class="features__icon"><app-icon [name]="jsonIcon" [size]="20" color="var(--accent)" /></div>
+      <div class="features__card-title">JSON Formatter</div>
+      <div class="features__check-list">
+        @for (item of jsonFeatureChecks; track item) {
+          <app-check-item>{{ item }}</app-check-item>
+        }
+      </div>
+    </app-card>
+
+    <app-card variant="hover">
+      <div class="features__icon"><app-icon [name]="compareIcon" [size]="20" color="var(--accent)" /></div>
+      <div class="features__card-title">Text Compare</div>
+      <div class="features__check-list">
+        @for (item of compareFeatureChecks; track item) {
+          <app-check-item>{{ item }}</app-check-item>
+        }
+      </div>
+    </app-card>
+
+    <app-card variant="hover">
+      <div class="features__icon"><app-icon [name]="boltIcon" [size]="20" color="var(--accent)" /></div>
+      <div class="features__card-title">Fast</div>
+      <div class="features__tag-list">
+        @for (tag of fastTags; track tag) {
+          <app-badge variant="tag">{{ tag }}</app-badge>
+        }
+      </div>
+    </app-card>
+
+    <app-card variant="hover">
+      <div class="features__icon"><app-icon [name]="shieldIcon" [size]="20" color="var(--accent)" /></div>
+      <div class="features__card-title">Secure</div>
+      <p class="features__description">Everything runs in your browser.<br />No data is ever stored or sent anywhere.</p>
+    </app-card>
+  </div>
+</section>

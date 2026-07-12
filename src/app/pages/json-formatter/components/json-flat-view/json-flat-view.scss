@@ -1,0 +1,17 @@
+.flat-row {
+  display: flex;
+  gap: 10px;
+}
+
+.flat-row__num {
+  color: var(--text-mute);
+  flex-shrink: 0;
+  width: 24px;
+  text-align: right;
+  user-select: none;
+  white-space: pre;
+}
+
+.flat-row__code {
+  white-space: pre;
+}

@@ -1,0 +1,66 @@
+<section class="tool-page">
+  <a routerLink="/" class="back-link">← Back to home</a>
+
+  <app-section-eyebrow>JSON Formatter</app-section-eyebrow>
+  <h1 class="tool-page__title">Paste JSON. Get clarity.</h1>
+  <p class="tool-page__subtitle">Pretty print, minify, and validate — with inline error messages and syntax highlighting.</p>
+
+  <div class="json-card">
+    <app-json-toolbar
+      [outputMode]="outputMode()"
+      [autoFormat]="autoFormat()"
+      [isTreeMode]="isTreeMode()"
+      [showValidBadge]="showValidBadge()"
+      [showInvalidBadge]="showInvalidBadge()"
+      [jsonError]="jsonError()"
+      [jsonCopied]="jsonCopied()"
+      [historyOpen]="historyOpen()"
+      [historyItems]="historyItems()"
+      (modeChange)="onModeChange($event)"
+      (toggleAuto)="onToggleAutoFormat()"
+      (expandAll)="onExpandAll()"
+      (collapseAll)="onCollapseAll()"
+      (upload)="onUploadJson($event)"
+      (toggleHistory)="toggleHistory()"
+      (selectHistory)="onSelectHistory($event)"
+      (copy)="onCopyJson()"
+      (download)="onDownloadJson()"
+      (clear)="onClearJson()"
+      (openFullscreen)="onOpenFullscreen()"
+    />
+
+    <div class="json-card__grid">
+      <app-json-input-panel [value]="jsonRaw()" (valueChange)="onJsonChange($event)" (blurred)="onJsonBlur()" />
+      <app-json-output-panel
+        [mode]="outputMode()"
+        [showManualPrompt]="showManualPrompt()"
+        [showInvalidBadge]="showInvalidBadge()"
+        [jsonError]="jsonError()"
+        [treeRows]="treeRows()"
+        [flatRows]="flatRows()"
+        [worktreeRows]="worktreeRows()"
+        (manualFormat)="onManualFormat()"
+        (togglePath)="onTogglePath($event)"
+      />
+    </div>
+  </div>
+</section>
+
+<app-json-fullscreen-view
+  [open]="jsonFullscreen()"
+  [mode]="outputMode()"
+  [showManualPrompt]="showManualPrompt()"
+  [showInvalidBadge]="showInvalidBadge()"
+  [jsonError]="jsonError()"
+  [treeRows]="treeRows()"
+  [flatRows]="flatRows()"
+  [worktreeRows]="worktreeRows()"
+  [jsonCopied]="jsonCopied()"
+  (closed)="onCloseFullscreen()"
+  (manualFormat)="onManualFormat()"
+  (togglePath)="onTogglePath($event)"
+  (expandAll)="onExpandAll()"
+  (collapseAll)="onCollapseAll()"
+  (copy)="onCopyJson()"
+  (download)="onDownloadJson()"
+/>

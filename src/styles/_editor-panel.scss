@@ -1,0 +1,25 @@
+/* Shared "labeled code editor pane" visuals used by the JSON input panel and
+   the Text Compare Original/Modified panels. */
+
+.panel-label {
+  padding: 10px 20px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-mute);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-2);
+}
+
+.panel-textarea {
+  width: 100%;
+  min-height: 220px;
+  padding: 20px;
+  background: var(--bg-2);
+  color: var(--text-dim);
+  border: none;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.7;
+  resize: vertical;
+  display: block;
+}

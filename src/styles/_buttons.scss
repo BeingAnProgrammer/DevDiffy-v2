@@ -1,0 +1,73 @@
+/* Shared button visuals — applied via the [appButton] directive to native <a>/<button> elements
+   (same pattern as Angular Material's mat-button: a directive, not a wrapper component, so
+   routerLink/href/click/type all keep working exactly as they do on the native element). */
+
+.dd-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  border-radius: 100px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.dd-btn--sm {
+  padding: 8px 14px;
+  font-size: 11px;
+  gap: 6px;
+}
+
+.dd-btn--xs {
+  padding: 7px 14px;
+  font-size: 11px;
+  border: none;
+}
+
+.dd-btn--primary {
+  background: var(--accent);
+  color: #001016;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
+}
+
+.dd-btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(0, 229, 255, 0.5);
+}
+
+.dd-btn--ghost,
+.dd-btn--ghost-danger {
+  border-color: var(--border-strong);
+  color: var(--text-dim);
+  background: var(--surface);
+}
+
+.dd-btn--ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.dd-btn--ghost-danger:hover {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.dd-btn--toggle {
+  background: transparent;
+  color: var(--text-dim);
+}
+
+.dd-btn--toggle-active {
+  background: var(--accent);
+  color: #001016;
+}

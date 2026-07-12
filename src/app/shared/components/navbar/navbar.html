@@ -1,0 +1,21 @@
+<nav class="navbar">
+  <a routerLink="/" class="brand">
+    <span class="brand__dot" aria-hidden="true"></span>
+    DevDiffy
+  </a>
+
+  <div class="nav-links">
+    <a routerLink="/json-formatter" routerLinkActive="is-active">JSON Formatter</a>
+    <a routerLink="/text-compare" routerLinkActive="is-active">Text Compare</a>
+    <a routerLink="/docs" routerLinkActive="is-active">Documentation</a>
+    <a href="https://github.com/BeingAnProgrammer" target="_blank" rel="noopener noreferrer" class="nav-links__external">GitHub</a>
+  </div>
+
+  <div class="nav-actions">
+    <div class="search-hint" aria-hidden="true">
+      <app-icon name="search" [size]="13" color="#6b7280" />
+      <span>Search...</span>
+    </div>
+    <a routerLink="/json-formatter" appButton="primary" size="sm">Get Started</a>
+  </div>
+</nav>

@@ -1,0 +1,15 @@
+:host {
+  display: block;
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-strong);
+  background: var(--bg-2);
+  box-shadow: var(--shadow-card);
+  z-index: 20;
+  overflow: hidden;
+}

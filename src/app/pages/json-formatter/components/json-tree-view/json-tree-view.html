@@ -1,0 +1,29 @@
+@for (row of rows(); track row.key) {
+  <div class="tree-row">
+    <span class="tree-row__num">{{ row.num }}</span>
+    <span
+      class="tree-row__arrow"
+      [style.padding-left.px]="row.indent"
+      [class.tree-row__arrow--clickable]="row.arrowVisible"
+      [attr.role]="row.arrowVisible ? 'button' : null"
+      [attr.tabindex]="row.arrowVisible ? 0 : null"
+      [attr.aria-label]="row.arrowVisible ? 'Toggle ' + (row.keyName || 'node') : null"
+      (click)="row.arrowVisible && togglePath.emit(row.key)"
+      (keydown.enter)="row.arrowVisible && togglePath.emit(row.key)"
+    >{{ row.arrow }}</span>
+    <span class="tree-row__code">
+      @if (row.hasKey) {
+        <span class="tree-row__key">"{{ row.keyName }}"</span><span class="tree-row__punct">: </span>
+      }
+      <span class="tree-row__punct">{{ row.bracketOpen }}</span>
+      @if (row.showCollapsedTail) {
+        <span class="tree-row__collapsed"> {{ row.collapsedLabel }} </span>
+      }
+      <span class="tree-row__punct">{{ row.bracketClose }}</span>
+      @if (row.showValue) {
+        <span [style.color]="row.valueColor">{{ row.valueText }}</span>
+      }
+      <span class="tree-row__punct">{{ row.comma }}</span>
+    </span>
+  </div>
+}

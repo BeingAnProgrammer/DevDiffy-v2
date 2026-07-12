@@ -1,0 +1,13 @@
+<section class="how-it-works" aria-label="How it works">
+  <div class="how-it-works__grid">
+    @for (step of steps; track step.index) {
+      <div class="step">
+        <div class="step__index" aria-hidden="true">{{ step.index }}</div>
+        <div>
+          <div class="step__title">{{ step.title }}</div>
+          <div class="step__description">{{ step.description }}</div>
+        </div>
+      </div>
+    }
+  </div>
+</section>

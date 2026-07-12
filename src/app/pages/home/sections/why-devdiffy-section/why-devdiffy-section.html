@@ -1,0 +1,10 @@
+<section class="why" aria-labelledby="why-heading">
+  <app-section-eyebrow>Why DevDiffy</app-section-eyebrow>
+  <h2 id="why-heading" class="why__title">No clutter. Just the tools.</h2>
+
+  <div class="why__grid">
+    @for (reason of reasons; track reason) {
+      <app-check-item variant="chip">{{ reason }}</app-check-item>
+    }
+  </div>
+</section>

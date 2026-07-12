@@ -1,0 +1,14 @@
+@switch (variant()) {
+  @case ('live') {
+    <div class="badge badge--live">
+      <span class="badge__dot" [style.background]="dotColor()" [style.box-shadow]="'0 0 10px ' + dotColor()"></span>
+      <ng-content />
+    </div>
+  }
+  @case ('soon') {
+    <span class="badge badge--soon"><ng-content /></span>
+  }
+  @default {
+    <span class="badge badge--tag"><ng-content /></span>
+  }
+}

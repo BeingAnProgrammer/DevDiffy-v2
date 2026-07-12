@@ -1,0 +1,22 @@
+.check-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.check-item app-icon {
+  flex-shrink: 0;
+  display: inline-flex;
+}
+
+.check-item--chip {
+  gap: 10px;
+  padding: 18px 20px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  font-size: 14px;
+  color: var(--text);
+}

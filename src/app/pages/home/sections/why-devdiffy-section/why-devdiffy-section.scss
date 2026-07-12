@@ -1,0 +1,19 @@
+.why {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 70px 40px;
+}
+
+.why__title {
+  font-size: clamp(30px, 4vw, 46px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0 0 44px;
+  text-wrap: balance;
+}
+
+.why__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 14px;
+}

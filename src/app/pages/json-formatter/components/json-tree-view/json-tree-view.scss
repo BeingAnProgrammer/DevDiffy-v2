@@ -1,0 +1,42 @@
+.tree-row {
+  display: flex;
+  gap: 8px;
+}
+
+.tree-row__num {
+  width: 22px;
+  text-align: right;
+  color: var(--text-mute);
+  user-select: none;
+  flex-shrink: 0;
+  white-space: pre;
+}
+
+.tree-row__arrow {
+  width: 14px;
+  flex-shrink: 0;
+  user-select: none;
+  color: var(--text-mute);
+  padding-right: 6px;
+}
+
+.tree-row__arrow--clickable {
+  cursor: pointer;
+}
+
+.tree-row__code {
+  white-space: pre;
+}
+
+.tree-row__key {
+  color: var(--accent);
+}
+
+.tree-row__punct {
+  color: var(--text-mute);
+}
+
+.tree-row__collapsed {
+  color: var(--text-mute);
+  font-style: italic;
+}

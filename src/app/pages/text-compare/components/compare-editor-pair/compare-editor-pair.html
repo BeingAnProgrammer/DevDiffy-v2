@@ -1,0 +1,22 @@
+<div class="editor-pair">
+  <div class="editor-pair__col editor-pair__col--left">
+    <div class="panel-label" id="compare-original-label">Original</div>
+    <textarea
+      class="panel-textarea"
+      aria-labelledby="compare-original-label"
+      spellcheck="false"
+      [value]="textA()"
+      (input)="onAInput($event)"
+    ></textarea>
+  </div>
+  <div class="editor-pair__col">
+    <div class="panel-label" id="compare-modified-label">Modified</div>
+    <textarea
+      class="panel-textarea"
+      aria-labelledby="compare-modified-label"
+      spellcheck="false"
+      [value]="textB()"
+      (input)="onBInput($event)"
+    ></textarea>
+  </div>
+</div>

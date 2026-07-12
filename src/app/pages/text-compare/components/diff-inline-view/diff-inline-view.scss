@@ -1,0 +1,25 @@
+.inline-stream {
+  display: flex;
+  flex-direction: column;
+}
+
+.inline-row {
+  white-space: pre;
+  display: flex;
+  gap: 10px;
+  padding: 2px 20px;
+}
+
+.inline-row__sign {
+  color: var(--text-mute);
+  flex-shrink: 0;
+  width: 18px;
+}
+
+.inline-row__num {
+  color: var(--text-mute);
+  flex-shrink: 0;
+  width: 22px;
+  text-align: right;
+  user-select: none;
+}
