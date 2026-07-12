@@ -3,7 +3,7 @@ import { Inject, Injectable } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { SeoConfig } from '../models/seo-config.model';
 
-const SITE_URL = 'https://devdiffy.app';
+const SITE_URL = 'https://devdiffy.vercel.app';
 const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png`;
 
 /**
