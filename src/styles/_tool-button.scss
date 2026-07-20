@@ -1,5 +1,5 @@
 /* Round icon-only toolbar buttons with per-action color identities.
-   Each variant is tinted at rest and saturates fully on hover.
+   Neutral at rest — each variant reveals its color on hover.
    Used by the JSON Formatter toolbar and history dropdown trigger. */
 
 .tool-btn {
@@ -29,10 +29,6 @@
 }
 
 /* Cyan — copy */
-.tool-btn--accent {
-  color: rgba(0, 229, 255, 0.7);
-}
-
 .tool-btn--accent:hover {
   color: var(--accent);
   border-color: rgba(0, 229, 255, 0.35);
@@ -40,10 +36,6 @@
 }
 
 /* Blue — upload */
-.tool-btn--blue {
-  color: rgba(122, 162, 255, 0.75);
-}
-
 .tool-btn--blue:hover {
   color: #7aa2ff;
   border-color: rgba(122, 162, 255, 0.4);
@@ -51,10 +43,6 @@
 }
 
 /* Green — download */
-.tool-btn--success {
-  color: rgba(52, 211, 153, 0.7);
-}
-
 .tool-btn--success:hover {
   color: var(--success);
   border-color: rgba(52, 211, 153, 0.35);
@@ -62,10 +50,6 @@
 }
 
 /* Purple — history */
-.tool-btn--purple {
-  color: rgba(201, 166, 240, 0.75);
-}
-
 .tool-btn--purple:hover {
   color: var(--purple);
   border-color: rgba(201, 166, 240, 0.35);
@@ -73,10 +57,6 @@
 }
 
 /* Teal — fullscreen */
-.tool-btn--teal {
-  color: rgba(94, 234, 212, 0.7);
-}
-
 .tool-btn--teal:hover {
   color: var(--accent-2);
   border-color: rgba(94, 234, 212, 0.35);
@@ -84,10 +64,6 @@
 }
 
 /* Red — clear */
-.tool-btn--danger {
-  color: rgba(255, 77, 109, 0.7);
-}
-
 .tool-btn--danger:hover {
   color: var(--danger);
   border-color: rgba(255, 77, 109, 0.4);
