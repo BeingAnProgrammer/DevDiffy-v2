@@ -1,9 +1,10 @@
 <section class="tool-page">
   <a routerLink="/" class="back-link">← Back to home</a>
 
-  <app-section-eyebrow>Text Compare</app-section-eyebrow>
-  <h1 class="tool-page__title">See exactly what changed.</h1>
-  <p class="tool-page__subtitle">Side-by-side or inline — added, removed, and modified lines, highlighted.</p>
+  <header class="tool-page__header">
+    <app-section-eyebrow>Text Compare</app-section-eyebrow>
+    <h1 class="tool-page__title">See exactly what changed.</h1>
+  </header>
 
   <app-compare-editor-pair [textA]="textA()" [textB]="textB()" (textAChange)="onTextAChange($event)" (textBChange)="onTextBChange($event)" />
 

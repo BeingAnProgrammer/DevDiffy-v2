@@ -1,9 +1,13 @@
 /* Shared "tool page" header chrome — used by JSON Formatter, Text Compare, and Docs pages. */
 
 .tool-page {
+  position: relative;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 70px 40px;
+  padding: 24px 40px 48px;
+
+  /* Editor panes fill the viewport below the compact header. */
+  --tool-body-min: max(440px, calc(100vh - 350px));
 }
 
 .back-link {
@@ -17,21 +21,53 @@
   cursor: pointer;
 }
 
+/* Inside a tool page the back link sits top-left, sharing the header's row. */
+.tool-page > .back-link {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  margin-bottom: 0;
+}
+
 .back-link:hover {
   color: var(--accent);
 }
 
+.tool-page__header {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.tool-page__header app-section-eyebrow .eyebrow {
+  margin-bottom: 8px;
+}
+
 .tool-page__title {
-  font-size: clamp(30px, 4vw, 46px);
+  font-size: clamp(20px, 2.2vw, 26px);
   font-weight: 600;
   letter-spacing: -0.02em;
-  margin: 0 0 12px;
+  margin: 0 0 6px;
   text-wrap: balance;
 }
 
 .tool-page__subtitle {
   color: var(--text-dim);
-  font-size: 16px;
-  max-width: 600px;
-  margin: 0 0 40px;
+  font-size: 13px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+@media (max-width: 860px) {
+  .tool-page > .back-link {
+    position: static;
+    margin-bottom: 16px;
+  }
+
+  .tool-page__header {
+    text-align: left;
+  }
+
+  .tool-page__subtitle {
+    margin: 0;
+  }
 }

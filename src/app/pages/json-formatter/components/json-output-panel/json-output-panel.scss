@@ -3,8 +3,8 @@
 }
 
 .output-body {
-  min-height: 440px;
-  max-height: 560px;
+  min-height: var(--tool-body-min, 440px);
+  max-height: max(560px, var(--tool-body-min, 560px));
   overflow: auto;
   padding: 20px;
   background: var(--bg-2);

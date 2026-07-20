@@ -5,5 +5,5 @@
 }
 
 .panel-textarea {
-  min-height: 440px;
+  min-height: var(--tool-body-min, 440px);
 }
