@@ -1,0 +1,73 @@
+<section class="tool-page about-page">
+  <a routerLink="/" class="back-link">← Back to home</a>
+
+  <div class="glass-card">
+    <div class="glass-card__sheen" aria-hidden="true"></div>
+
+    <div class="glass-card__grid">
+      <!-- Left column — story -->
+      <div class="about-story">
+        <span class="about-badge">About Me</span>
+
+        <h1 class="about-story__title">Nitesh Kumar, Full Stack Software Developer</h1>
+        <p class="about-story__lead">
+          I build fast, privacy-first tools for the web from India. DevDiffy exists because everyday developer tasks —
+          formatting JSON, comparing text — should be instant, free, and frictionless.
+        </p>
+
+        <div class="highlights">
+          @for (item of highlights; track item.title; let i = $index) {
+            <div class="highlight" [style.--stagger]="i">
+              <p class="highlight__label">{{ item.title }}</p>
+              <p class="highlight__text">{{ item.description }}</p>
+            </div>
+          }
+        </div>
+
+        <a href="https://portfolio.rvnk.in/" target="_blank" rel="noopener noreferrer" class="about-cta">
+          View Portfolio
+          <app-icon name="arrow-up-right" [size]="15" />
+        </a>
+      </div>
+
+      <!-- Right column — profile card -->
+      <div class="profile">
+        <div class="profile__glow" aria-hidden="true"></div>
+        <div class="profile-card">
+          <div class="profile-card__identity">
+            <div class="avatar">
+              <span class="avatar__glow" aria-hidden="true"></span>
+              <span class="avatar__monogram">NK</span>
+            </div>
+            <h2 class="profile-card__name">Nitesh Kumar</h2>
+            <p class="profile-card__role">Full Stack Developer · India</p>
+            <p class="profile-card__bio">
+              Turning everyday developer friction into tools that feel effortless.
+            </p>
+          </div>
+
+          <div class="social-list">
+            @for (social of socialLinks; track social.label; let i = $index) {
+              <a
+                class="social-row"
+                [style.--stagger]="i"
+                [href]="social.href"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="social-row__icon">
+                  <app-icon [name]="social.icon" [size]="16" />
+                </span>
+                <span class="social-row__meta">
+                  <span class="social-row__label">{{ social.label }}</span>
+                  <span class="social-row__handle">{{ social.handle }}</span>
+                </span>
+                <app-icon name="arrow-up-right" [size]="15" class="social-row__arrow" />
+              </a>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

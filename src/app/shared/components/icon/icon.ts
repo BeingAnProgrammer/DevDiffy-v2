@@ -3,6 +3,7 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 export type IconName =
   | 'search'
   | 'arrow-right'
+  | 'arrow-up-right'
   | 'check'
   | 'history'
   | 'fullscreen'

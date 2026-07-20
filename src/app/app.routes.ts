@@ -51,6 +51,17 @@ export const routes: Routes = [
     }),
   },
   {
+    path: 'about',
+    loadComponent: () => import('./pages/about/about.page').then((m) => m.AboutPage),
+    title: 'About Nitesh Kumar — DevDiffy',
+    data: seo({
+      title: 'About Nitesh Kumar — DevDiffy',
+      description:
+        'Nitesh Kumar is a full stack software developer from India building fast, privacy-first developer tools like DevDiffy.',
+      path: '/about',
+    }),
+  },
+  {
     path: '**',
     loadComponent: () => import('./pages/not-found/not-found.page').then((m) => m.NotFoundPage),
     title: 'Page not found — DevDiffy',
