@@ -1,9 +1,13 @@
 :host {
-  display: block;
+  display: flex;
+  flex-direction: column;
   border-right: 1px solid var(--border);
   height: 100%;
+  min-height: 0;
 }
 
 .panel-textarea {
-  min-height: var(--tool-body-min, 440px);
+  flex: 1;
+  min-height: 380px;
+  resize: none;
 }

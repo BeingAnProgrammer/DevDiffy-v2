@@ -1,4 +1,21 @@
+/* The page is one viewport-tall flex column: the card stretches to fill,
+   and the gap above it (header margin) equals the gap below it (page padding). */
+.tool-page {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 65px); /* 65px = sticky navbar height */
+  padding-bottom: 28px;
+}
+
+.tool-page .tool-page__header {
+  margin-bottom: 10px;
+}
+
 .json-card {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-strong);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
@@ -8,4 +25,7 @@
 .json-card__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  grid-auto-rows: 1fr;
+  flex: 1;
+  min-height: 0;
 }

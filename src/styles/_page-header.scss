@@ -5,9 +5,6 @@
   max-width: 1440px;
   margin: 0 auto;
   padding: 24px 40px 48px;
-
-  /* Editor panes fill the viewport below the compact header. */
-  --tool-body-min: max(440px, calc(100vh - 350px));
 }
 
 .back-link {

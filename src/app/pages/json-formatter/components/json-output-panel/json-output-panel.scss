@@ -1,10 +1,13 @@
 :host {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
 }
 
 .output-body {
-  min-height: var(--tool-body-min, 440px);
-  max-height: max(560px, var(--tool-body-min, 560px));
+  flex: 1;
+  min-height: 380px;
   overflow: auto;
   padding: 20px;
   background: var(--bg-2);
