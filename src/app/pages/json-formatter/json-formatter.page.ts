@@ -12,7 +12,7 @@ import { JsonOutputPanel } from './components/json-output-panel/json-output-pane
 import { JsonToolbar } from './components/json-toolbar/json-toolbar';
 
 const DEFAULT_JSON =
-  '{"profile":{"name":"Nitesh Kumar","role":"Full Stack Software Developer","username":"BeingAnProgrammer","location":"India","email":"nitesh20rv@gmail.com","website":"https://beinganprogrammer.github.io/niteshPortfolio/","socials":{"github":"https://github.com/BeingAnProgrammer","linkedin":"https://www.linkedin.com/in/rvnitesh/","medium":"https://medium.com/@rvnitesh"},"status":"Available","verified":true}}';
+  '{"profile":{"name":"Nitesh Kumar","role":"Full Stack Software Developer","location":"India","email":"nitesh20rv@gmail.com","website":"https://portfolio.rvnk.in/","socials":{"github":"https://github.com/BeingAnProgrammer","linkedin":"https://www.linkedin.com/in/rvnitesh/","medium":"https://medium.com/@rvnitesh"}}}';
 const JSON_INDENT = 4;
 
 @Component({
