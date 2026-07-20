@@ -3,7 +3,7 @@ import { Inject, Injectable } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { SeoConfig } from '../models/seo-config.model';
 
-const SITE_URL = 'https://devdiffy.vercel.app';
+const SITE_URL = 'https://devdiffy.rvnk.in';
 const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png`;
 
 /**
@@ -39,6 +39,7 @@ export class SeoService {
     this.meta.updateTag({ name: 'twitter:image', content: DEFAULT_OG_IMAGE });
 
     this.setCanonical(url);
+    this.setBreadcrumb(config, url);
   }
 
   private setCanonical(url: string): void {
@@ -49,5 +50,32 @@ export class SeoService {
       this.document.head.appendChild(link);
     }
     link.setAttribute('href', url);
+  }
+
+  /** Injects a two-level Home > Page BreadcrumbList schema; removed on routes with no breadcrumbLabel (home, 404). */
+  private setBreadcrumb(config: SeoConfig, url: string): void {
+    const existing = this.document.head.querySelector('#breadcrumb-schema');
+    if (!config.breadcrumbLabel) {
+      existing?.remove();
+      return;
+    }
+
+    const schema = {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL + '/' },
+        { '@type': 'ListItem', position: 2, name: config.breadcrumbLabel, item: url },
+      ],
+    };
+
+    let script = existing as HTMLScriptElement | null;
+    if (!script) {
+      script = this.document.createElement('script');
+      script.setAttribute('type', 'application/ld+json');
+      script.setAttribute('id', 'breadcrumb-schema');
+      this.document.head.appendChild(script);
+    }
+    script.textContent = JSON.stringify(schema);
   }
 }

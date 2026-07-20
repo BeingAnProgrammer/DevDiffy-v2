@@ -26,6 +26,7 @@ export const routes: Routes = [
       description:
         'Paste JSON to pretty-print, minify, or explore it as a collapsible tree, with inline validation errors and syntax highlighting. Runs entirely in your browser.',
       path: '/json-formatter',
+      breadcrumbLabel: 'JSON Formatter',
     }),
   },
   {
@@ -37,6 +38,7 @@ export const routes: Routes = [
       description:
         'Compare two versions of any text or code and see exactly what changed, side-by-side or inline, with ignore-whitespace and one-click copy.',
       path: '/text-compare',
+      breadcrumbLabel: 'Text Compare',
     }),
   },
   {
@@ -48,6 +50,7 @@ export const routes: Routes = [
       description:
         "Everything you need to know about DevDiffy's JSON Formatter and Text Compare tools, plus keyboard shortcuts and privacy details.",
       path: '/docs',
+      breadcrumbLabel: 'Documentation',
     }),
   },
   {
@@ -59,6 +62,30 @@ export const routes: Routes = [
       description:
         'Nitesh Kumar is a full stack software developer from India building fast, privacy-first developer tools like DevDiffy.',
       path: '/about',
+      breadcrumbLabel: 'About',
+    }),
+  },
+  {
+    path: 'privacy',
+    loadComponent: () => import('./pages/privacy/privacy.page').then((m) => m.PrivacyPage),
+    title: 'Privacy Policy — DevDiffy',
+    data: seo({
+      title: 'Privacy Policy — DevDiffy',
+      description:
+        "DevDiffy's JSON Formatter and Text Compare tools run entirely in your browser — read what data is (and isn't) collected.",
+      path: '/privacy',
+      breadcrumbLabel: 'Privacy Policy',
+    }),
+  },
+  {
+    path: 'terms',
+    loadComponent: () => import('./pages/terms/terms.page').then((m) => m.TermsPage),
+    title: 'Terms of Use — DevDiffy',
+    data: seo({
+      title: 'Terms of Use — DevDiffy',
+      description: 'The terms for using DevDiffy, a free set of browser-based JSON formatting and text comparison tools.',
+      path: '/terms',
+      breadcrumbLabel: 'Terms of Use',
     }),
   },
   {

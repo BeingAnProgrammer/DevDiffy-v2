@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://devdiffy.vercel.app/sitemap.xml
+Sitemap: https://devdiffy.rvnk.in/sitemap.xml
