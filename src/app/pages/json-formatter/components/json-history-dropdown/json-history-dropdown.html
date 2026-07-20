@@ -1,6 +1,13 @@
-<button type="button" appButton="ghost" size="sm" (click)="toggleOpen.emit()" aria-haspopup="true" [attr.aria-expanded]="open()">
-  <app-icon name="history" [size]="12" />
-  History
+<button
+  type="button"
+  class="tool-btn tool-btn--purple"
+  (click)="toggleOpen.emit()"
+  aria-haspopup="true"
+  [attr.aria-expanded]="open()"
+  title="History"
+  aria-label="History"
+>
+  <app-icon name="history" [size]="15" />
 </button>
 
 <app-dropdown-panel [open]="open()" [width]="280">

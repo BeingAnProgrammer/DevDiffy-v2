@@ -26,27 +26,40 @@
 
   <label
     for="json-upload-input"
-    appButton="ghost"
-    size="sm"
+    class="tool-btn tool-btn--accent"
     tabindex="0"
+    title="Upload JSON file"
+    aria-label="Upload JSON file"
     (keydown.enter)="uploadInput.click()"
     (keydown.space)="uploadInput.click(); $event.preventDefault()"
-  >Upload</label>
+  >
+    <app-icon name="upload" [size]="15" />
+  </label>
   <input #uploadInput id="json-upload-input" type="file" accept="application/json,.json,.txt" (change)="onFileSelected($event)" class="visually-hidden" />
 
   <app-json-history-dropdown [items]="historyItems()" [open]="historyOpen()" (toggleOpen)="toggleHistory.emit()" (select)="selectHistory.emit($event)" />
 
-  <button type="button" appButton="ghost" size="sm" (click)="copy.emit()">
+  <button
+    type="button"
+    class="tool-btn tool-btn--accent"
+    [class.tool-btn--done]="jsonCopied()"
+    (click)="copy.emit()"
+    [attr.title]="jsonCopied() ? 'Copied!' : 'Copy output'"
+    [attr.aria-label]="jsonCopied() ? 'Copied!' : 'Copy output'"
+  >
     @if (jsonCopied()) {
-      Copied!
+      <app-icon name="check" [size]="15" [strokeWidth]="2.5" />
     } @else {
-      Copy
+      <app-icon name="copy" [size]="15" />
     }
   </button>
-  <button type="button" appButton="ghost" size="sm" (click)="download.emit()">Download</button>
-  <button type="button" appButton="ghost-danger" size="sm" (click)="clear.emit()">Clear</button>
-  <button type="button" appButton="ghost" size="sm" (click)="openFullscreen.emit()">
-    <app-icon name="fullscreen" [size]="12" />
-    Fullscreen
+  <button type="button" class="tool-btn tool-btn--success" (click)="download.emit()" title="Download JSON" aria-label="Download JSON">
+    <app-icon name="download" [size]="15" />
+  </button>
+  <button type="button" class="tool-btn tool-btn--danger" (click)="clear.emit()" title="Clear" aria-label="Clear">
+    <app-icon name="trash" [size]="15" />
+  </button>
+  <button type="button" class="tool-btn" (click)="openFullscreen.emit()" title="Fullscreen" aria-label="Fullscreen">
+    <app-icon name="fullscreen" [size]="15" />
   </button>
 </div>

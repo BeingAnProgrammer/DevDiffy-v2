@@ -1,0 +1,64 @@
+/* Round icon-only toolbar buttons with per-action color identities.
+   Used by the JSON Formatter toolbar and history dropdown trigger. */
+
+.tool-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  flex: none;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-dim);
+  cursor: pointer;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease,
+    background 0.15s ease,
+    transform 0.15s ease;
+}
+
+.tool-btn:hover {
+  color: var(--text);
+  border-color: var(--border-strong);
+  transform: translateY(-1px);
+}
+
+.tool-btn--accent:hover {
+  color: var(--accent);
+  border-color: rgba(0, 229, 255, 0.35);
+  background: rgba(0, 229, 255, 0.08);
+}
+
+.tool-btn--success:hover {
+  color: var(--success);
+  border-color: rgba(52, 211, 153, 0.35);
+  background: rgba(52, 211, 153, 0.08);
+}
+
+.tool-btn--purple:hover {
+  color: var(--purple);
+  border-color: rgba(201, 166, 240, 0.35);
+  background: rgba(201, 166, 240, 0.08);
+}
+
+.tool-btn--danger {
+  color: rgba(255, 77, 109, 0.7);
+}
+
+.tool-btn--danger:hover {
+  color: var(--danger);
+  border-color: rgba(255, 77, 109, 0.4);
+  background: rgba(255, 77, 109, 0.1);
+}
+
+/* Transient confirmation state, e.g. after a successful copy. */
+.tool-btn--done,
+.tool-btn--done:hover {
+  color: var(--success);
+  border-color: rgba(52, 211, 153, 0.45);
+  background: rgba(52, 211, 153, 0.1);
+}
