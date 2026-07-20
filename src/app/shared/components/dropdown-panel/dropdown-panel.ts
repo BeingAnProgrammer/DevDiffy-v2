@@ -9,4 +9,5 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 export class DropdownPanel {
   readonly open = input(false);
   readonly width = input(280);
+  readonly align = input<'left' | 'right'>('left');
 }

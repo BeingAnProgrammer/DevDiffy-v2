@@ -10,7 +10,7 @@
   <app-icon name="history" [size]="15" />
 </button>
 
-<app-dropdown-panel [open]="open()" [width]="280">
+<app-dropdown-panel [open]="open()" [width]="280" align="right">
   @if (items().length) {
     @for (item of items(); track item.key) {
       <button type="button" class="history-item" (click)="select.emit(item.raw)">

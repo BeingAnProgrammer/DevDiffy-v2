@@ -1,5 +1,5 @@
 @if (open()) {
-  <div class="dropdown" [style.width.px]="width()">
+  <div class="dropdown" [class.dropdown--right]="align() === 'right'" [style.width.px]="width()">
     <ng-content />
   </div>
 }
