@@ -8,14 +8,48 @@
     <a routerLink="/json-formatter" routerLinkActive="is-active">JSON Formatter</a>
     <a routerLink="/text-compare" routerLinkActive="is-active">Text Compare</a>
     <a routerLink="/docs" routerLinkActive="is-active">Documentation</a>
-    <a href="https://github.com/BeingAnProgrammer" target="_blank" rel="noopener noreferrer" class="nav-links__external">GitHub</a>
   </div>
 
   <div class="nav-actions">
-    <div class="search-hint" aria-hidden="true">
-      <app-icon name="search" [size]="13" color="#6b7280" />
-      <span>Search...</span>
-    </div>
-    <a routerLink="/json-formatter" appButton="primary" size="sm">Get Started</a>
+    <a
+      href="https://github.com/BeingAnProgrammer"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="icon-link"
+      aria-label="GitHub"
+      title="GitHub"
+    >
+      <app-icon name="github" [size]="18" />
+    </a>
+    <a
+      href="https://www.linkedin.com/in/rvnitesh/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="icon-link"
+      aria-label="LinkedIn"
+      title="LinkedIn"
+    >
+      <app-icon name="linkedin" [size]="17" />
+    </a>
+    <a
+      href="https://x.com/ItsNitesh_"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="icon-link"
+      aria-label="X (Twitter)"
+      title="X (Twitter)"
+    >
+      <app-icon name="twitter" [size]="16" />
+    </a>
+    <a
+      href="https://medium.com/@rvnitesh"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="icon-link"
+      aria-label="Medium"
+      title="Medium"
+    >
+      <app-icon name="medium" [size]="18" />
+    </a>
   </div>
 </nav>

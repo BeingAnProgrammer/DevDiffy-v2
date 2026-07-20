@@ -10,6 +10,7 @@ export type IconName =
   | 'github'
   | 'linkedin'
   | 'twitter'
+  | 'medium'
   | 'json-braces'
   | 'compare-bars'
   | 'bolt'
