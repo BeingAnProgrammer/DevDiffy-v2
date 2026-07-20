@@ -3,23 +3,33 @@
     <div class="fs-header__title">
       <span class="fs-header__dot" aria-hidden="true"></span>
       output.json
+      @if (mode() === 'pretty') {
+        <div class="fs-header__tree-actions">
+          <button type="button" appButton="ghost" size="sm" (click)="expandAll.emit()">Expand All</button>
+          <button type="button" appButton="ghost" size="sm" (click)="collapseAll.emit()">Collapse All</button>
+        </div>
+      }
     </div>
     <div class="fs-header__actions">
-      @if (mode() === 'pretty') {
-        <button type="button" appButton="ghost" size="sm" (click)="expandAll.emit()">Expand All</button>
-        <button type="button" appButton="ghost" size="sm" (click)="collapseAll.emit()">Collapse All</button>
-      }
-      <button type="button" appButton="ghost" size="sm" (click)="copy.emit()">
+      <button
+        type="button"
+        class="tool-btn tool-btn--accent"
+        [class.tool-btn--done]="jsonCopied()"
+        (click)="copy.emit()"
+        [attr.title]="jsonCopied() ? 'Copied!' : 'Copy output'"
+        [attr.aria-label]="jsonCopied() ? 'Copied!' : 'Copy output'"
+      >
         @if (jsonCopied()) {
-          Copied!
+          <app-icon name="check" [size]="15" [strokeWidth]="2.5" />
         } @else {
-          Copy
+          <app-icon name="copy" [size]="15" />
         }
       </button>
-      <button type="button" appButton="ghost" size="sm" (click)="download.emit()">Download</button>
-      <button type="button" appButton="ghost" size="sm" (click)="closed.emit()">
-        <app-icon name="minimize" [size]="12" [strokeWidth]="2.2" />
-        Minimize (Esc)
+      <button type="button" class="tool-btn tool-btn--success" (click)="download.emit()" title="Download JSON" aria-label="Download JSON">
+        <app-icon name="download" [size]="15" />
+      </button>
+      <button type="button" class="tool-btn tool-btn--teal" (click)="closed.emit()" title="Minimize (Esc)" aria-label="Minimize (Esc)">
+        <app-icon name="minimize" [size]="15" [strokeWidth]="2.2" />
       </button>
     </div>
   </div>

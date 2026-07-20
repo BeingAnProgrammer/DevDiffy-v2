@@ -14,8 +14,9 @@
   min-height: 100vh;
 }
 
+/* No z-index here: it would trap fixed overlays (e.g. the JSON fullscreen view)
+   in a stacking context that loses to the sticky navbar's z-index. */
 .app-main {
   position: relative;
-  z-index: 1;
   flex: 1;
 }

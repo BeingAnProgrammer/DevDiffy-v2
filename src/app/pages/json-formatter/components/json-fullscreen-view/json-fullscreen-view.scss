@@ -26,6 +26,13 @@
   display: inline-block;
 }
 
+.fs-header__tree-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 18px;
+}
+
 .fs-header__actions {
   display: flex;
   align-items: center;
@@ -37,7 +44,7 @@
   overflow: auto;
   padding: 36px 48px;
   font-family: var(--font-mono);
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.8;
   position: relative;
 }
